@@ -45,8 +45,6 @@
             font-weight: 600;
             line-height: 1.2;
         }
-
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -117,8 +115,6 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -210,6 +206,39 @@
             margin-top: 0.25rem;
         }
 
+        .death-summary {
+            margin: 3rem auto 0;
+            max-width: 760px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            border: 1px solid var(--border);
+            background: rgba(18, 18, 26, 0.78);
+            text-align: left;
+        }
+
+        .death-summary-item {
+            padding: 1.25rem;
+        }
+
+        .death-summary-item + .death-summary-item {
+            border-left: 1px solid var(--border);
+        }
+
+        .death-summary-item .label {
+            display: block;
+            color: var(--accent);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .death-summary-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
         .scroll-indicator {
             position: absolute;
             bottom: 2rem;
@@ -225,8 +254,6 @@
             40% { transform: translateX(-50%) translateY(-10px); }
             60% { transform: translateX(-50%) translateY(-5px); }
         }
-
-        /* Sections General */
         section {
             padding: 5rem 2rem;
             max-width: 1000px;
@@ -260,8 +287,6 @@
             margin-right: 0.5rem;
             font-weight: 600;
         }
-
-        /* Content Blocks */
         .content-block {
             margin-bottom: 3rem;
         }
@@ -286,8 +311,6 @@
             color: var(--text-primary);
             font-weight: 600;
         }
-
-        /* Quote Blocks */
         .quote-block {
             background: var(--bg-secondary);
             border-left: 4px solid var(--accent);
@@ -325,8 +348,6 @@
             font-style: normal;
             font-family: 'Inter', sans-serif;
         }
-
-        /* Timeline */
         .timeline {
             position: relative;
             padding-left: 2rem;
@@ -373,8 +394,6 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
         }
-
-        /* Data Table */
         .data-table {
             width: 100%;
             border-collapse: collapse;
@@ -403,8 +422,6 @@
         .data-table tr:hover td {
             background: rgba(201, 169, 110, 0.03);
         }
-
-        /* Cards Grid */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -438,8 +455,6 @@
             font-size: 0.9rem;
             margin: 0;
         }
-
-        /* Warning Box */
         .warning-box {
             background: rgba(196, 92, 92, 0.08);
             border: 1px solid rgba(196, 92, 92, 0.3);
@@ -460,8 +475,6 @@
             font-size: 0.9rem;
             margin: 0;
         }
-
-        /* Info Box */
         .info-box {
             background: var(--bg-tertiary);
             border: 1px solid var(--border);
@@ -485,16 +498,12 @@
         .info-box li {
             margin-bottom: 0.5rem;
         }
-
-        /* Divider */
         .section-divider {
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%);
             margin: 4rem auto;
             max-width: 600px;
         }
-
-        /* Footer */
         footer {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
@@ -520,8 +529,6 @@
             padding-top: 1.5rem;
             border-top: 1px solid var(--border);
         }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -535,6 +542,14 @@
                 gap: 1.5rem;
             }
 
+            .death-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .death-summary-item + .death-summary-item {
+                border-left: 0;
+                border-top: 1px solid var(--border);
+            }
             section {
                 padding: 3rem 1.5rem;
             }
@@ -551,8 +566,6 @@
                 padding: 0.75rem;
             }
         }
-
-        /* Fade In Animation */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -574,8 +587,9 @@
             <ul class="nav-links">
                 <li><a href="#biography">Biography</a></li>
                 <li><a href="#research">Research</a></li>
-                <li><a href="#circumstances">Circumstances</a></li>
-                <li><a href="#conspiracy">The Phenomenon</a></li>
+                <li><a href="#decline">Warnings</a></li>
+                <li><a href="#circumstances">Death Record</a></li>
+                <li><a href="#conspiracy">Claims</a></li>
                 <li><a href="#legacy">Legacy</a></li>
             </ul>
             <button class="mobile-menu-btn">☰</button>
@@ -584,9 +598,9 @@
 
     <header class="hero">
         <div class="hero-content">
-            <div class="hero-label">Exhaustive Research Archive</div>
+            <div class="hero-label">Research Archive</div>
             <h1>Amy Catherine Eskridge</h1>
-            <p class="hero-subtitle">The Life, Research, and Legacy of an Aerospace Engineer at the Intersection of Institutional Science and Public Controversy</p>
+            <p class="hero-subtitle">A clearer archive of her life, research, final warning, disputed death, and legacy.</p>
             <div class="hero-meta">
                 <div class="hero-meta-item">
                     <div class="value">1987</div>
@@ -605,16 +619,25 @@
                     <div class="label">Alabama</div>
                 </div>
             </div>
+            <div class="death-summary">
+                <div class="death-summary-item">
+                    <span class="label">Official Record</span>
+                    <p>Public summaries describe her June 11, 2022 death as a suicide by gunshot wound.</p>
+                </div>
+                <div class="death-summary-item">
+                    <span class="label">Disputed Claim</span>
+                    <p>Amy's May 13, 2022 warning said that any report claiming she killed herself should be treated as suspicious. The disputed claim is that she was killed by another person.</p>
+                </div>
+            </div>
         </div>
         <div class="scroll-indicator">↓</div>
     </header>
 
     <main>
-        <!-- Introduction -->
         <section id="introduction" class="fade-in">
             <div class="section-header">
                 <h2><span class="section-number">I.</span>Introduction</h2>
-                <p class="subtitle">The intersection of advanced aerospace research, national security, and public speculation</p>
+                <p class="subtitle">A clearer separation of biography, research, public record, and disputed claims</p>
             </div>
             
             <div class="content-block">
@@ -622,18 +645,16 @@
                 
                 <p>Born into a family deeply entrenched in the American aerospace apparatus, Eskridge represented a unique and highly volatile synthesis of institutional scientific pedigree and unorthodox, frontier-pushing theoretical research. Her professional work, which initially spanned traditional chemistry and biology before expanding aggressively into gravity modification, electroceramics, plasma physics, and zero-point energy rectification, positioned her at the absolute vanguard of modern theoretical physics.</p>
                 
-                <p>However, the legacy of Amy Eskridge has been profoundly complicated and fundamentally altered by the circumstances surrounding her premature death in June 2022 at the age of 34. Officially ruled a suicide by local law enforcement authorities and attributed by her grieving family to the unbearable, cumulative toll of severe chronic physical pain, her passing has nevertheless been co-opted, dissected, and reassembled into a sprawling, international geopolitical narrative.</p>
+                <p>Amy Eskridge's legacy is also inseparable from the dispute over her death in June 2022. Public summaries describe a suicide ruling, while a message attributed to Amy shortly before her death explicitly warned that any report saying she killed herself should be treated as suspicious. This page now keeps those two claims visible and separate instead of burying the dispute.</p>
             </div>
 
             <div class="warning-box">
-                <h4>⚠ Critical Note on Identity Disambiguation</h4>
+                <h4>Identity Note</h4>
                 <p>The digital footprint surrounding the name "Amy Eskridge" is heavily polluted by algorithmic conflation, automated research aggregation errors, and coincidental naming overlaps. This archive strictly concerns <strong>Amy Catherine Eskridge</strong>, born September 19, 1987, in Huntsville, Alabama, to parents Kathy and Richard Eskridge. She passed away on June 11, 2022, at the age of 34.</p>
             </div>
         </section>
 
         <div class="section-divider"></div>
-
-        <!-- Biography -->
         <section id="biography" class="fade-in">
             <div class="section-header">
                 <h2><span class="section-number">II.</span>Biography & Heritage</h2>
@@ -684,8 +705,6 @@
         </section>
 
         <div class="section-divider"></div>
-
-        <!-- Academic & Research -->
         <section id="research" class="fade-in">
             <div class="section-header">
                 <h2><span class="section-number">III.</span>Academic & Research Trajectory</h2>
@@ -770,24 +789,22 @@
         </section>
 
         <div class="section-divider"></div>
-
-        <!-- Psychological Decline -->
         <section id="decline" class="fade-in">
             <div class="section-header">
-                <h2><span class="section-number">IV.</span>Psychological Decline & Paranoia</h2>
-                <p class="subtitle">The tragic intersection of chronic pain, institutional pressure, and mental health deterioration</p>
+                <h2><span class="section-number">IV.</span>Final Warnings & Reported Threats</h2>
+                <p class="subtitle">What Amy said before her death and how those statements are interpreted</p>
             </div>
 
             <div class="content-block">
-                <h3>Chronic Pain and Mental Health Degradation</h3>
-                <p>The foundational reality of Eskridge's final years was a severe, debilitating battle with chronic physical pain. Following her death, her family released a formal statement explicitly noting that she had suffered from ongoing, unmanageable chronic pain. The physical and psychological toll of chronic illness is immense. From an epidemiological and psychiatric standpoint, severe chronic pain is heavily, and tragically, correlated with profound depressive episodes, cognitive fatigue, and a drastically increased risk of suicide.</p>
+                <h3>Chronic Pain and Competing Interpretations</h3>
+                <p>Accounts of Eskridge's final years include severe chronic physical pain. That fact is part of the public explanation for the official suicide ruling. It does not erase the separate claim that she believed she was under threat, nor does it resolve the public dispute over whether her death should be accepted as self-inflicted.</p>
             </div>
 
             <div class="content-block">
                 <h3>The 2020 Podcast & The "Psychological War"</h3>
-                <p>This internal distress began to externalize publicly around 2020. Eskridge appeared on a podcast hosted by <strong>Jeremy Rys</strong> ("Alien Scientist"). During this broadcast, Eskridge discussed her ongoing, foundational work regarding antigravity. Crucially, however, she noted a paranoid caveat: she stated she needed <strong>"approval from NASA"</strong> before she could present her full findings.</p>
+                <p>Her concern about outside pressure became public around 2020. Eskridge appeared on a podcast hosted by <strong>Jeremy Rys</strong> ("Alien Scientist"). During this broadcast, Eskridge discussed her ongoing, foundational work regarding antigravity. Crucially, however, she added an unusual caveat: she stated she needed <strong>"approval from NASA"</strong> before she could present her full findings.</p>
                 
-                <p>During the interview, the tone shifted from scientific optimism to acute institutional paranoia. Eskridge claimed that a deliberate <strong>"psychological war"</strong> was being actively waged against her to halt her research and discredit her findings. She issued a stark warning to other independent scientists, stating that <strong>"if you stick your neck out in private... they will come for you."</strong></p>
+                <p>During the interview, the tone shifted from scientific optimism to concern about institutional pressure. Eskridge claimed that a deliberate <strong>"psychological war"</strong> was being actively waged against her to halt her research and discredit her findings. She issued a stark warning to other independent scientists, stating that <strong>"if you stick your neck out in private... they will come for you."</strong></p>
             </div>
 
             <div class="quote-block">
@@ -797,11 +814,11 @@
 
             <div class="content-block">
                 <h3>The Directed Energy Weapon (DEW) Claims</h3>
-                <p>The most visceral and alarming manifestation of her psychological distress occurred just weeks before her suicide. Eskridge recorded a video of herself displaying severe physical burns on her hands. Rather than attributing these burns to a mundane accident, or more logically, an occupational hazard associated with her daily, hands-on work with high-voltage pulsed power equipment and the Gradient Impulse Generator, she formulated a highly complex, conspiratorial explanation.</p>
+                <p>One of the most alarming public claims appeared shortly before her death. Eskridge recorded a video of herself displaying severe physical burns on her hands. She attributed the burns to an attack rather than to an accident or lab-related injury.</p>
                 
                 <p>In the video, Eskridge explicitly attributed the injuries to a targeted, covert attack utilizing a <strong>"guided energy weapon"</strong> or DEW. She detailed this alleged weapon with hyper-specific engineering terminology, describing it as an <strong>"RF k-band emitter"</strong> that was powered by a daisy-chain of five car batteries, covertly operated by unknown assailants from inside a nearby parked SUV.</p>
                 
-                <p>This level of hyper-specific, technical paranoia is a recognized hallmark of individuals with advanced engineering or scientific knowledge experiencing a psychotic break or severe paranoid ideation; their delusions map perfectly onto their highly specialized technical vocabulary.</p>
+                <p>The specificity of the claim is one reason the case remains disputed online: skeptics view it as a sign of distress, while supporters view it as technical detail from someone trying to document an attack.</p>
             </div>
 
             <div class="content-block">
@@ -815,17 +832,15 @@
             </div>
 
             <div class="content-block">
-                <p>To an outside observer predisposed to conspiratorial thinking, these texts represent the ultimate, undeniable "smoking gun" of foul play. However, from a clinical psychological perspective, they are heavily indicative of severe, inescapable paranoid ideation. When an individual suffering from extreme physical agony and mental decline operates within a geographic and professional field dominated by absolute secrecy, defense contractors, and massive geopolitical stakes, their internal distress is frequently externalized.</p>
+                <p>These texts are the clearest basis for the claim that Amy did not kill herself and that someone else may have been responsible. The official record did not adopt that conclusion, but the warning deserves to be displayed directly because it is central to why her death remains disputed.</p>
             </div>
         </section>
 
         <div class="section-divider"></div>
-
-        <!-- Circumstances of Death -->
         <section id="circumstances" class="fade-in">
             <div class="section-header">
                 <h2><span class="section-number">V.</span>The Circumstances of Death</h2>
-                <p class="subtitle">Empirical reality versus speculative fiction</p>
+                <p class="subtitle">Official record, Amy's warning, and the homicide claim</p>
             </div>
 
             <div class="timeline">
@@ -847,7 +862,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">June 11, 2022</div>
-                    <div class="timeline-content">Passed away at age 34. Officially ruled a suicide by self-inflicted gunshot wound.</div>
+                    <div class="timeline-content">Passed away at age 34. Official summaries call it suicide; Amy's prior warning disputed that possibility.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">July 10, 2022</div>
@@ -865,8 +880,8 @@
             </div>
 
             <div class="content-block">
-                <h3>Official Cause of Death</h3>
-                <p>Regardless of the specific investigating agency, the conclusive legal and medical outcome across all jurisdictions is totally uniform: <strong>her death was caused by a single, self-inflicted gunshot wound to the head, and it was officially, legally ruled a suicide.</strong></p>
+                <h3>Official Ruling and Disputed Homicide Claim</h3>
+                <p>Publicly available summaries state that her death was ruled a suicide by gunshot wound. The opposing claim is that Amy was killed by another person and that the suicide ruling should not be accepted at face value. This archive presents that claim as a disputed allegation unless new primary evidence is added.</p>
             </div>
 
             <div class="quote-block">
@@ -876,15 +891,13 @@
 
             <div class="content-block">
                 <h3>Family Response & Memorialization</h3>
-                <p>The family has maintained this stance vigorously in the years since, subsequently categorizing any conspiracy theories surrounding her death as complete <strong>"absurdity"</strong> and <strong>"baloney,"</strong> expressing deep, ongoing anguish over the relentless digital exploitation of her memory by political actors and internet forums.</p>
+                <p>Her family has publicly rejected claims of foul play. Others continue to point to Amy's own warning texts as the reason they believe she did not kill herself. The page separates those positions instead of collapsing them into one conclusion.</p>
                 
                 <p>Amy Eskridge was celebrated and mourned by her community and colleagues as a visionary intellect lost too soon. A celebration of her life was held on Sunday, July 10, 2022, at Huntsville West. Beyond traditional terrestrial memorials, her profound impact on the private aerospace sector was immortalized by her close friend, <strong>Samuel Reid</strong>. As the CEO of Geometric Energy Corporation, Reid announced that the company's next Earth Orbit satellite, as well as their highly publicized <strong>DOGE-1 payload destined for the moon</strong>, would be explicitly named in her honor.</p>
             </div>
         </section>
 
         <div class="section-divider"></div>
-
-        <!-- The Conspiracy -->
         <section id="conspiracy" class="fade-in">
             <div class="section-header">
                 <h2><span class="section-number">VI.</span>The "Missing Scientists" Phenomenon</h2>
@@ -893,7 +906,7 @@
 
             <div class="content-block">
                 <h3>The Escalation of the Theory</h3>
-                <p>By the spring of 2026, the highly specific details of her death—her field of study, her paranoid texts, and her DEW claims—were subsumed into a massive, viral, and increasingly dangerous socio-political narrative. She became retroactively designated by internet theorists and political commentators as <strong>"patient zero,"</strong> the foundational first case in what became known globally as the <strong>"Missing Scientists" conspiracy theory.</strong></p>
+                <p>By the spring of 2026, the highly specific details of her death—her field of study, her warning texts, and her DEW claims—were subsumed into a massive, viral, and increasingly dangerous socio-political narrative. She became retroactively designated by internet theorists and political commentators as <strong>"patient zero,"</strong> the foundational first case in what became known globally as the <strong>"Missing Scientists" conspiracy theory.</strong></p>
                 
                 <p>The core tenet posited that a highly coordinated, incredibly lethal campaign was currently underway to systematically eliminate American scientists, engineers, and researchers who possessed sensitive, classified, or paradigm-shifting knowledge regarding advanced energy projects, materials science, nuclear programs, and Unidentified Aerial Phenomena (UAPs).</p>
             </div>
@@ -903,14 +916,14 @@
                     <tr>
                         <th>Individual</th>
                         <th>Alleged Connection</th>
-                        <th>Actual Empirical Cause</th>
+                        <th>Public Record / Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Amy Eskridge (34)</strong></td>
                         <td>Assassinated via DEW for UAP/Anti-gravity knowledge</td>
-                        <td>Self-inflicted gunshot wound (Suicide); severe chronic pain</td>
+                        <td>Officially listed as suicide; disputed by those citing Amy's warning texts</td>
                     </tr>
                     <tr>
                         <td><strong>Dr. Ning Li (78)</strong></td>
@@ -939,7 +952,7 @@
                 <h3>Statistical Reality vs. Apophenia</h3>
                 <p>The aggressive aggregation of these disparate names created a powerful, seductive illusion of a coherent pattern. Proponents argued relentlessly that these deaths were orchestrated by foreign adversaries like China or Iran, or alternatively, by rogue US defense contractors operating unacknowledged Special Access Programs (USAPs).</p>
                 
-                <p>However, medical sociologists, data scientists, and science communicators swiftly dismantled the statistical basis of the entire theory. <strong>Dr. Robert Bartholomew</strong> explicitly characterized the phenomenon as mass <strong>"apophenia"</strong>—the well-documented psychological tendency to perceive highly meaningful, sinister connections between entirely unrelated, random events.</p>
+                <p>Critics argue that the statistical basis of the broader theory is weak. <strong>Dr. Robert Bartholomew</strong> explicitly characterized the phenomenon as mass <strong>"apophenia"</strong>—the well-documented psychological tendency to perceive highly meaningful, sinister connections between entirely unrelated, random events.</p>
             </div>
 
             <div class="info-box">
@@ -972,13 +985,11 @@
             </div>
 
             <div class="content-block">
-                <p>The fact that the Federal Bureau of Investigation, the White House, and the United States Congress were politically forced to expend massive amounts of taxpayer resources investigating the tragic suicide of Amy Eskridge—four full years after local police, the county coroner, and her own grieving family had conclusively, medically, and legally settled the matter—illustrates the immense, terrifying power of digital disinformation in the post-Covid era.</p>
+                <p>The later federal attention shows how a local death ruling, Amy's warning texts, and the broader missing-scientists narrative became tied together in public debate. The core dispute remains simple: the official record says suicide; the counterclaim says she was killed and did not kill herself.</p>
             </div>
         </section>
 
         <div class="section-divider"></div>
-
-        <!-- Legacy -->
         <section id="legacy" class="fade-in">
             <div class="section-header">
                 <h2><span class="section-number">VII.</span>Legacy & Conclusion</h2>
@@ -993,19 +1004,19 @@
             </div>
 
             <div class="content-block">
-                <h3>A Tragic Decline</h3>
-                <p>Her life, however, was tragically derailed by the onset of severe, unmanageable chronic physical pain and subsequent, devastating psychological deterioration. The intense paranoia that characterized her final months—manifesting in tragic claims of directed energy weapon attacks from SUVs and desperate, preemptive text messages predicting her own murder—were not the indicators of a vast geopolitical assassination plot, but the heartbreaking symptoms of a brilliant mind collapsing under intense, inescapable physical and mental strain.</p>
+                <h3>A Disputed Death</h3>
+                <p>Her final months are interpreted in sharply different ways. The official and family-backed explanation emphasizes chronic pain and suicide. The disputed account emphasizes her own statements that she was under threat, including her warning that reports claiming she killed herself should be treated as suspicious.</p>
                 
-                <p>Her death on June 11, 2022, at the age of 34 by a self-inflicted gunshot wound, was a profound personal tragedy that her family accepted with clear-eyed, heartbreaking clarity.</p>
+                <p>Her death on June 11, 2022, at the age of 34, remains the central unresolved question for many readers: whether the official suicide ruling is complete, or whether Amy's warning points to homicide by another person.</p>
             </div>
 
             <div class="content-block">
-                <h3>The Danger of Digital Disinformation</h3>
-                <p>The subsequent weaponization and gross distortion of her biography by internet conspiracy theorists, political commentators, and grifters in 2026 serves as a stark, permanent commentary on the modern intersection of theoretical science, institutional secrecy, and digital misinformation. By aggressively ignoring statistical base rates, established epidemiological realities, and the explicit, desperate pleas of her grieving family, a decentralized network of actors successfully transformed Eskridge into a martyr for a non-existent, sensationalized covert war.</p>
+                <h3>Why the Record Matters</h3>
+                <p>A responsible archive should make the record readable without erasing the dispute. Amy's research, her warning, the official ruling, and the homicide claim should be visible as distinct pieces of information so readers can understand exactly what is known, what is alleged, and what remains contested.</p>
             </div>
 
             <div class="quote-block">
-                <p>Amy Eskridge's true, lasting legacy lies not in the paranoid texts of her final days, nor in the federal probes of 2026, but in the theoretical frameworks she championed and the physical payload bearing her name currently orbiting the Earth—a fitting testament to a woman who spent the entirety of her brief life looking relentlessly upward.</p>
+                <p>Amy Eskridge's legacy includes her research, her ambition, and the warning she left behind. Any archive about her should state plainly that she said she did not kill herself, while also marking the official ruling and the homicide claim as separate parts of the public record.</p>
                 <div class="attribution">— Research Archive Conclusion</div>
             </div>
         </section>
@@ -1021,7 +1032,6 @@
     </footer>
 
     <script>
-        // Fade in animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1038,8 +1048,6 @@
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
-
-        // Mobile menu toggle
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
         
@@ -1054,8 +1062,6 @@
             navLinks.style.padding = '1rem 2rem';
             navLinks.style.borderBottom = '1px solid var(--border)';
         });
-
-        // Smooth scroll for nav links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
